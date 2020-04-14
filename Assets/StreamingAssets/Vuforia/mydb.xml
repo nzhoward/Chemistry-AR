@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="H2O" size="1.000000 0.333333" />
+    <ImageTarget name="CO2" size="1.000000 0.333333" />
+    <ImageTarget name="01-Hydrogen-Tile-300x300" size="1.000000 1.000000" />
+    <ImageTarget name="06-Carbon-Tile-300x300" size="1.000000 1.000000" />
+    <ImageTarget name="08-Oxygen-Tile-300x300" size="1.000000 1.000000" />
+    <ImageTarget name="Marker_2" size="0.100000 0.134167" />
+    <ImageTarget name="marker_1" size="0.100000 0.100000" />
+  </Tracking>
+</QCARConfig>
