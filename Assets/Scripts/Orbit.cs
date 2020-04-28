@@ -7,12 +7,13 @@ public class Orbit : MonoBehaviour
     // Start is called before the first frame update
 
     public float xSpread;
+    public float ySpread;
     public float zSpread;
-    public float yOffset;
     public Transform centerPoint;
+    public float angleOffset;
 
     public float rotSpeed;
-    public bool rotateClockwise;
+    public bool horizontal;
 
     float timer = 0;
 
@@ -31,18 +32,16 @@ public class Orbit : MonoBehaviour
 
     void Rotate()
     {
-        if (rotateClockwise)
+        float number = Random.Range(0.0f, 1.0f);
+
+        float x = -Mathf.Cos(timer + angleOffset) * xSpread;
+        float z = Mathf.Sin(timer + angleOffset) * zSpread;
+        float y = Mathf.Sin(timer + angleOffset) * ySpread;
+        if (horizontal)
         {
-            float x = -Mathf.Cos(timer) * xSpread;
-            float z = Mathf.Sin(timer) * zSpread;
-            Vector3 pos = new Vector3(x, yOffset, z);
-            transform.position = pos + centerPoint.position;
-        } else
-        {
-            float x = Mathf.Cos(timer) * xSpread;
-            float z = Mathf.Sin(timer) * zSpread;
-            Vector3 pos = new Vector3(x, yOffset, z);
-            transform.position = pos + centerPoint.position;
+            y = 0;
         }
+        Vector3 pos = new Vector3(x, y, z);
+        transform.position = pos + centerPoint.position;
     }
 }
